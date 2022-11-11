@@ -1,4 +1,4 @@
-export * from './AddPage';
+export * from './addPage';
 export * from './ListPage';
 export * from './createadUser';
 export * from './home';
