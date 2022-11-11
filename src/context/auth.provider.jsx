@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await fetch(`${URL_BASE}/login`, {
         method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(user), referrerPolicy: "unsafe_url" 
+        headers: { 'Content-Type': 'application/json', referrerPolicy: "unsafe_url" }, body: JSON.stringify(user),
       });
 
       const data = await response.json();
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await fetch(`${URL_BASE}/register`, {
         method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, 
+        headers: { 'Content-Type': 'application/json', "referrerPolicy": "unsafe-url" }, 
         body: JSON.stringify(user) 
       });
 
@@ -53,8 +53,8 @@ export const AuthProvider = ({ children }) => {
           "x-token": `${token}`,
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
+          "referrerPolicy": "unsafe-url"
         },
-        referrerPolicy: "unsafe_url" 
       });
 
       const data = await response.json();
