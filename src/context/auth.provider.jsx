@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await fetch(`${URL_BASE}/login`, {
         method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(user), 
+        headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(user), referrerPolicy: "unsafe_url" 
       });
 
       const data = await response.json();
@@ -54,6 +54,7 @@ export const AuthProvider = ({ children }) => {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
+        referrerPolicy: "unsafe_url" 
       });
 
       const data = await response.json();
